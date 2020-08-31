@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style> 
+		#lb_to_kilo,#dollar_to_euro  {}
+		.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+#unhide, #unhide_2, #unhide_3 {
+	display: none;
+}
+	</style>
+	<!--script> 
+		
+	</script-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">SELECT CONVERSION</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#" onclick = "one()">lb to Kilo</a>
+    <a href="#" onclick = "two()">usd to euro</a>
+    <a href="#" onclick = "three()">feet to meters</a>
+  </div>
+</div>
+
+<div id = 'unhide'>
+ <h4> <strong> pound to kilogram  </strong> </h4>
+ <div id = 'lb_to_kilo'>
+    <form action = "{% url 'kilo' %}" method="POST" name = "pounds"> {% csrf_token %}
+ 	{{ form }}
+ 	<input type="submit" name= "kilo"  onclick = "show()">
+  </form>
+  
+ </div>
+ <h4 class = "answer"> kilos: {{ kilos }}  </h4>
+</div>
+
+
+
+
+<div id = 'unhide_2'>
+ <h4> usd to euro</h4>
+ <div id = "dollar_to_euro">
+ 	<form action = "{%  url 'euro' %}" method = "POST" name = "dollars"> {% csrf_token %}
+ 		{{ form_2 }}
+ 		<input type = "submit" name = "euro">
+ 	</form>
+ 	
+ </div>
+<h4 class = answer> euros: {{ euros }} </h4>
+</div> 
+
+
+
+<div id = 'unhide_3'>
+ <h4> feet to meters </h4>
+ <div id = "feet_to_meters">
+ 	<form action = "{%  url 'meter' %}" method = "POST" name = "feet"> {% csrf_token %}
+ 		{{ form_3 }}
+ 		<input type = "submit" name = "meters">
+ 	</form>
+ 	
+ </div>
+<h4 class = answer> meters: {{ meters }} </h4>
+</div> 
+
+</body>
+<script> function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+function one(){
+	var x = document.querySelector('#unhide');
+	x.style.display = 'block';
+	var y = document.querySelector('#unhide_2');
+	y.style.display = 'none';
+	var z = document.querySelector('#unhide_3');
+	z.style.display = 'none';
+	
+}
+
+
+function two(){
+	var a = document.querySelector('#unhide_2');
+	a.style.display = 'block';
+	var b = document.querySelector('#unhide');
+	b.style.display = 'none';
+	var c = document.querySelector('#unhide_3');
+	c.style.display = 'none';
+}
+
+function three(){
+	var g = document.querySelector('#unhide_2');
+	g.style.display = 'none';
+	var h = document.querySelector('#unhide');
+	h.style.display = 'none';
+	var i = document.querySelector('#unhide_3');
+	i.style.display = 'block';
+}
+</script>
+</html>

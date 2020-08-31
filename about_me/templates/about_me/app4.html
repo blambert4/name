@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+	</style>
+</head>
+<body>
+<form action = "{% url 'converter' %}">
+	<button class = "dropbtn"> GO BACK </button>
+</form>
+<br>
+<div id = 'ft_to_meter'>
+    <form action = "{% url 'meter' %}" method="POST" name = "feet"> {% csrf_token %}
+ 	{{ form_3 }}
+ 	<input type="submit" name= "meter"  onclick = "show()">
+  </form>
+  
+ </div>
+ <h4 class = "answer"> meters: {{ meters }}  </h4>
+ </body>
+ </html>

@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>
+		Home Page
+	</title>
+	<link rel = "stylesheet" href = "{% static 'about_me/home.css' %}">
+	
+</head>
+<body>
+<div id = "how">
+	<div class = "top_left" onmouseover = "one();five();ex1()" onmouseout = "one();five();stop() " > 
+		<h1> GOOGLE MAPS API </h1> 
+		<form method = 'POST' action = "{% url 'api' %}" > {% csrf_token %}
+			<button> VISIT </button>
+		
+		</form> 
+	</div>
+
+
+	<div  class = "top_right" onmouseover = "two();six();ex4()" onmouseout = "two();six();stop()">  
+	 	<h1> LANDING SITE </h1> 
+	 	<form method = 'POST' action= "{% url 'landing' %}"> {% csrf_token %}
+	 		<button> VISIT </button>
+	 	</form>
+    </div>
+
+
+	<div  class = "bot_left" onmouseover = "three();seven(); ex2()" onmouseout = "three();seven(); stop()"> 
+		<h1> MEGAMAN </h1>
+		<form method = 'POST' action= "{% url 'game' %}"> {% csrf_token %}
+			<button> PLAY </button>
+		</form>
+	</div>
+
+
+	<div  class = "bot_right" onmouseover = "four();eight();ex3()" onmouseout = "four(); eight(); stop()"> 
+		<h1> SUPER CONVERTER </h1>
+		<form method = 'POST' action= "{% url 'converter' %}"> {% csrf_token %}
+			<button> VISIT </button>
+		</form>
+	</div>
+
+	<div class = "explanation">
+		<p class = "changes"> place your cursor over a topic and i will explain </p>
+	</div>
+</div>
+
+<script src = "{% static 'about_me/home.js' %}"> </script>
+<script src = "{% static 'about_me/home2.js' %}"> </script>
+
+</body>
+</html>

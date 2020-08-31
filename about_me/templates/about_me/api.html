@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>JOE'S</title>
+  <style>
+    h3,h1 {text-align: center}
+    h3,p{ font-family: sans-serif; }
+    div { display: inline-block; }
+    span {background-color: black}
+    #text{
+      border: solid;
+      text-align: left;
+      padding: 2px;
+      width: 400px;
+      color: white;
+      background-color: maroon;
+      border-radius: 10px;
+      position: relative;
+      top: 30px;
+      left: 30px;
+    }
+    
+    #map{
+      height:350px;
+      width:600px;
+      border-radius: 10px;
+      position: relative;
+      top: 80px;
+      left: 60px;
+    }
+  </style>
+</head>
+<body>
+  
+    <h1> "LOCATION, LOCATION, LOCATION" </h1>
+    <br>
+    <h3> This sample webpage uses a google map api. i have decided the coordinates below.
+         Enjoy </h3>
+    
+    <hr>
+    <div class = "setup" id = "text"> 
+      <p> the API in question: <span> https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap <span><p>
+      <ul> This map works through a few builtin functions and variables.<span> initMAP, map, options, and marker </span>
+        <li> the <span>"initMAP"</span> function is the callback function searched for by the API</li>
+        <li> the variable <span>"map"</span> searches the document for an id of "map" and takes an argument of "options"</li>
+        <li> the variable <span>"options"</span> allows me to specify where and how i like my map </li>
+        <li> the variable <span>"marker"</span> allows me to set a point of interest in my map, such as an address</li>
+      </ul>
+       </div>
+       
+    <div class = "setup" id="map"></div>
+    
+    
+ 
+  <script>
+    function initMap(){
+      // Map options
+      var options = {
+        zoom:12,
+        center:{lat:33.7490,lng:-84.3880}
+      }
+
+      // New map
+      var map = new google.maps.Map(document.getElementById('map'), options);
+
+      var marker = new google.maps.Marker({
+    position: { lat: 33.752890, lng: -84.366315},
+    map: map,
+  });
+      }
+  </script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaO3c1o5xgSysqNVQQ9I9OzQNczM9l2mc&callback=initMap">
+  </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+div {display: inline-block; text-align: center;}
+#how {
+   position: relative;
+   margin-left: 5vw;
+   width: 90vw;
+   max-width: 90%;
+   /*border: solid;*/
+   height: 45vw;}
+
+         .explanation{
+            position: absolute;
+            top: 25vh;
+            left: 35.5vw;
+            border-radius: 2%;
+            background-color: grey;
+            color: white;
+            word-wrap: break-word;
+            width: 18vw;
+            height: 25vh;
+            text-align: center;
+            padding-top: 120px;
+            
+         }
+
+          .top_left {position: absolute;
+               top: 4vw;
+               left: 9vw;
+               width: 24vw;
+               height: 16vw;
+               color: grey;
+               filter: grayscale(100%);
+               background-image: url('chillin.jpg');
+               background-size: 100%;
+               background-repeat: no-repeat;
+               border: solid grey 2px;
+               border-radius: 5px;
+               visibility: visible;
+               }
+          .top_right {position: absolute;
+               top: 4vw;
+               right: 9vw;
+               width: 24vw;
+               height: 16vw;
+               color: grey;
+               filter: grayscale(100%);
+               background-image: url('landing.jpg');
+               background-size: 100%;
+               background-repeat: no-repeat;
+               border: solid grey 2px;
+               border-radius: 5px;
+               visibility: visible;}
+        .bot_left {position: absolute;
+               bottom: 4vw;
+               left: 9vw;
+               width: 24vw;
+               height: 16vw;
+               color: grey;
+               filter: grayscale(100%);
+               background-image: url('background.jpg');
+               background-size: 100%;
+               background-repeat: no-repeat; 
+               border: solid grey 2px;
+               border-radius: 5px;
+               visibility: visible;}
+        .bot_right {position: absolute;
+               bottom: 4vw;
+               right: 9vw;
+               width: 24vw;
+               height: 16vw;
+               color: grey;
+               filter: grayscale(100%);
+               background-image: url('equation.jpg');
+               background-size: 100%;
+               background-repeat: no-repeat; 
+               border: solid grey 2px;
+               border-radius: 5px;
+               visibility: visible;}
+
+        button {visibility: hidden;}
+                       
+        
+

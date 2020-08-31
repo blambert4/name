@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style> 
+		#lb_to_kilo,#dollar_to_euro  {padding-left: 520px;}
+		h1,h4 {text-align: center;}
+		h3 
+		
+	</style>
+	<!--script> 
+		
+	</script-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+ <h4> <strong> pound to kilogram  </strong> </h4>
+ <div id = 'lb_to_kilo'>
+    <form action = "{% url 'kilo' %}" method="POST" name = "pounds"> {% csrf_token %}
+ 	{{ form }}
+ 	<input type="submit" name= "kilo"  onclick = "show()">
+  </form>
+  
+ </div>
+ <h4 class = "answer"> kilos: {{ kilos }}  </h4>
+<br>
+<br>
+ <h4> usd to euro</h4>
+ <div id = "dollar_to_euro">
+ 	<form action = "{%  url 'euro' %}" method = "POST" name = "dollars"> {% csrf_token %}
+ 		{{ form_2 }}
+ 		<input type = "submit" name = "euro">
+ 	</form>
+ 	
+</div>
+<h4 class = answer> euros: {{ euros }} </h4>
+ 
+
+</body>
+</html>

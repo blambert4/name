@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>body </title>
+	<link rel = "stylesheet" href = '{% static "about_me/main.css" %}'>
+	<link rel = "stylesheet" href = "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class = "covid">
+	<p> To learn how to keep you and your family safe during the pandemic, <a href ="#"> click here</a> </p>
+	<svg onclick = "remove()" width="16px" height="16px" viewBox="0 0 16 16" class="bi bi-x-square-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  		<path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm9.854 4.854a.5.5 0 0 0-.708-.708L8 7.293 4.854 4.146a.5.5 0 1 0-.708.708L7.293 8l-3.147 3.146a.5.5 0 0 0 .708.708L8 8.707l3.146 3.147a.5.5 0 0 0 .708-.708L8.707 8l3.147-3.146z"/>
+	</svg>
+</div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <img  class = "tree" src ="{% static 'about_me/tree.jpg' %}">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About Us</a>
+      </li>  
+      <li class="nav-item">
+        <a class="nav-link" href="#">Community Outreach</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Careers</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>	
+	<div id = "main">
+		<div id = "first">
+		<h1> COVID-19 UPDATE </h1>
+			<hr>
+			<img style = "float: right" src = '{% static "about_me/essentialworkers.jpg" %}' class = "">
+			<p> We know the COVID-19 pandemic has affected everybody across this nation as well as this world.
+				We want you to know that we appreciate every single essential worker that is striving to keep our
+				families and loved ones safe. Although many of our offices are closed we are still working remotely
+				to achieve our goals. We feel this is the best way to keep our team safe and able to provide for 
+				those loved ones we hold so dear. Thank you to everyone involved </p>
+		</div>
+
+		<div id = "second">
+			<h1> UPCOMING EVENTS</h1>
+			<hr>
+			<iframe style = "float: right" width= "60%" height="300px" src="https://www.youtube.com/embed/Mhydtj5rzbs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<h2> We're Moving!!</h2>
+			<p> We're hard at work building a brand new office for COMPANY. Our new office will have much more space for us to continue to grow! Officially moving locations in the Summer of 2022!</p>
+		</div>
+
+		<div id = "third">
+			<h2> Happy Holidays </h2>
+			<p> December 23rd is our annual company Christmas Party! Check out 2019's best photos! <a href="#"> Entire Catalog </a></p>
+
+			<img class = "catalog" src = '{% static "about_me/company.jpg" %}'>
+			<img class = "catalog" src = '{% static "about_me/company2.jpg" %}'>
+			<img class = "catalog" src = '{% static "about_me/company3.jpg" %}'>
+		</div>
+	</div>
+	<div id = "side">
+		<h4> Employee Spotlight </h4>
+		<hr>
+		<h6> Sharon O'neil </h6>
+		<img src = '{% static "about_me/company4.jpg" %}'>
+		<p> Sharon's work-ethic and quick decision-making skills earn her the employee spotlight for the month of September. So far Sharon and her team have been the setting the standard for excellence. Way to go and keep it up!
+		<br>
+		<br>
+		<h4> Newsletter </h4>
+		<hr>
+		<p> ho my god </p>
+	</div>
+	<script src = '{% static "about_me/main.js" %}'></script>
+</body> 
+</html>

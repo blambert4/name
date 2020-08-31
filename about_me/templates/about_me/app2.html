@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+	</style>
+</head>
+<body>
+<form action = "{% url 'converter' %}">
+	<button class = "dropbtn"> GO BACK </button>
+</form>
+<br>
+<div id = 'lb_to_kilo'>
+    <form action = "{% url 'kilo' %}" method="POST" name = "pounds"> {% csrf_token %}
+ 	{{ form }}
+ 	<input type="submit" name= "kilo"  onclick = "show()">
+  </form>
+  
+ </div>
+ <h4 class = "answer"> kilos: {{ kilos }}  </h4>
+ </body>
+ </html>
